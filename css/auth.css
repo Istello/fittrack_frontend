@@ -1,0 +1,260 @@
+ 
+.auth-page {
+    min-height: 100vh;
+    background: var(--light);
+}
+
+/* =========================
+   AUTH HEADER
+   ========================= */
+
+.auth-page .site-header {
+    background: var(--white);
+}
+
+.auth-page .nav-container {
+    min-height: 68px;
+}
+
+/* =========================
+   AUTH MAIN
+   ========================= */
+
+.auth-main {
+    min-height: calc(100vh - 68px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 55px 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 460px;
+}
+
+/* =========================
+   AUTH HEADER TEXT
+   ========================= */
+
+.auth-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.auth-header h1 {
+    margin-bottom: 12px;
+    font-size: clamp(2rem, 6vw, 2.7rem);
+}
+
+.auth-header p {
+    max-width: 390px;
+    margin: auto;
+    font-size: .95rem;
+}
+
+/* =========================
+   FORM
+   ========================= */
+
+.auth-form {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--dark);
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--dark);
+    background: var(--white);
+
+    outline: none;
+    transition: .2s;
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, .1);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: .75rem;
+}
+
+/* =========================
+   PASSWORD / FORGOT
+   ========================= */
+
+.label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.forgot-password {
+    color: var(--primary);
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.forgot-password:hover {
+    color: var(--primary-dark);
+}
+
+/* =========================
+   TERMS
+   ========================= */
+
+.terms {
+    margin: 5px 0 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    color: var(--muted);
+    font-size: .8rem;
+}
+
+.checkbox-label input {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+}
+
+.checkbox-label a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* =========================
+   DIVIDER
+   ========================= */
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+
+    color: var(--muted);
+    font-size: .75rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* =========================
+   AUTH SWITCH
+   ========================= */
+
+.auth-switch {
+    text-align: center;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.auth-switch a {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.auth-switch a:hover {
+    color: var(--primary-dark);
+}
+
+/* =========================
+   AUTH NOTE
+   ========================= */
+
+.auth-note {
+    margin-top: 20px;
+    padding: 12px 15px;
+
+    border-radius: 8px;
+    background: var(--light);
+
+    color: var(--muted);
+    font-size: .75rem;
+    text-align: center;
+}
+
+/* =========================
+   AUTH FOOTER
+   ========================= */
+
+.auth-footer {
+    padding: 20px;
+    text-align: center;
+
+    color: var(--muted);
+    font-size: .75rem;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 520px) {
+    .auth-main {
+        padding: 35px 15px;
+    }
+
+    .auth-form {
+        padding: 22px 18px;
+    }
+
+    .auth-header {
+        margin-bottom: 22px;
+    }
+
+    .auth-header h1 {
+        font-size: 2rem;
+    }
+
+    .label-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .auth-footer {
+        padding-bottom: 15px;
+    }
+}
