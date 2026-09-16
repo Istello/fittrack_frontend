@@ -1,4 +1,7 @@
- 
+ /* =========================
+    FITTRACK - AUTH PAGES
+    ========================= */
+
 .auth-page {
     min-height: 100vh;
     background: var(--light);
