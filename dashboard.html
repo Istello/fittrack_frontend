@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Your FitTrack BMI dashboard."
+    >
+
+    <title>Dashboard — FitTrack</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body class="dashboard-page" id="body">
+
+    <!-- HEADER -->
+    <header class="site-header dashboard-header">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                Fit<span>Track</span>
+            </a>
+
+            <div class="dashboard-user">
+
+                <div class="user-avatar" id="userAvatar">
+                    U
+                </div>
+
+                <div class="user-info">
+                    <strong id="userName">User</strong>
+                    <span id="userEmail">Loading...</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="logout-btn"
+                    id="logoutBtn"
+                    onclick="logout()"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <!-- WELCOME -->
+        <section class="dashboard-welcome">
+
+            <span class="eyebrow">YOUR DASHBOARD</span>
+
+            <h1>
+                Welcome back,
+                <span id="welcomeName">User</span>
+            </h1>
+
+            <p>
+                Keep track of your BMI and monitor your progress over time.
+            </p>
+
+        </section>
+
+
+        <!-- OVERVIEW -->
+        <section class="dashboard-grid">
+
+            <!-- CURRENT BMI -->
+            <div class="dashboard-card bmi-overview">
+
+                <div class="dashboard-card-header">
+
+                    <h3>Current BMI</h3>
+
+                    <span
+                        class="status-badge status-normal"
+                        id="bmiStatus"
+                    >
+                        Normal
+                    </span>
+
+                </div>
+
+                <div class="dashboard-scale">
+
+                    <div class="scale-track">
+
+                        <div class="scale-normal"></div>
+
+                        <div
+                            class="scale-indicator"
+                            id="bmiIndicator"
+                        ></div>
+
+                    </div>
+
+                    <div class="scale-labels">
+                        <span>Underweight</span>
+                        <span>Normal</span>
+                        <span>Overweight</span>
+                        <span>Obese</span>
+                    </div>
+
+                </div>
+
+                <div class="bmi-details">
+
+                    <div class="detail">
+                        <span>BMI</span>
+                        <strong id="currentBmi">--</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Weight</span>
+                        <strong id="currentWeight">-- kg</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Height</span>
+                        <strong id="currentHeight">-- cm</strong>
+                    </div>
+
+                </div>
+
+                <p class="bmi-message" id="bmiMessage">
+                    Calculate your BMI to see your current health category.
+                </p>
+
+            </div>
+
+
+            <!-- TOTAL RECORDS -->
+            <div class="dashboard-card stat-card">
+
+                <div>
+                    <div class="stat-card-icon">
+                        #
+                    </div>
+
+                    <strong id="totalRecords">0</strong>
+
+                    <span>
+                        BMI Records
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- LAST UPDATED -->
+            <div class="dashboard-card stat-card">
+
+                <div>
+                    <div class="stat-card-icon">
+                        ↻
+                    </div>
+
+                    <strong id="lastUpdated">
+                        --
+                    </strong>
+
+                    <span>
+                        Last Check
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BMI CALCULATOR -->
+        <section class="dashboard-section">
+
+            <div class="dashboard-section-heading">
+
+                <span class="eyebrow">
+                    BMI CALCULATOR
+                </span>
+
+                <h2>Calculate your BMI</h2>
+
+                <p>
+                    Enter your current height and weight to create a new record.
+                </p>
+
+            </div>
+
+
+            <div class="calculator-card">
+
+                <form id="bmiForm" class="bmi-form">
+
+                    <!-- HEIGHT -->
+                    <div class="form-group">
+
+                        <label for="height">
+                            Height
+                        </label>
+
+                        <div class="input-with-unit">
+
+                            <input
+                                type="number"
+                                id="height"
+                                name="height"
+                                placeholder="e.g. 175"
+                                min="50"
+                                max="300"
+                                step="0.1"
+                                required
+                            >
+
+                            <span>cm</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- WEIGHT -->
+                    <div class="form-group">
+
+                        <label for="weight">
+                            Weight
+                        </label>
+
+                        <div class="input-with-unit">
+
+                            <input
+                                type="number"
+                                id="weight"
+                                name="weight"
+                                placeholder="e.g. 70"
+                                min="10"
+                                max="500"
+                                step="0.1"
+                                required
+                            >
+
+                            <span>kg</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-full"
+                        id="calculateBtn"
+                    >
+                        Calculate BMI
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- HISTORY -->
+        <section class="dashboard-section">
+
+            <div class="dashboard-section-heading">
+
+                <span class="eyebrow">
+                    YOUR HISTORY
+                </span>
+
+                <h2>BMI History</h2>
+
+                <p>
+                    Review your previous BMI measurements.
+                </p>
+
+            </div>
+
+
+            <div class="history-card">
+
+                <!-- TABLE HEADER -->
+                <div class="history-header">
+
+                    <span>Date</span>
+                    <span>Height</span>
+                    <span>Weight</span>
+                    <span>BMI</span>
+                    <span>Status</span>
+
+                </div>
+
+
+                <!-- JS WILL INSERT RECORDS HERE -->
+                <div id="historyList">
+
+                    <div class="history-row">
+
+                        <span>
+                            No records yet
+                        </span>
+
+                        <span>--</span>
+                        <span>--</span>
+                        <span>--</span>
+                        <span>--</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HEALTH NOTE -->
+        <section class="dashboard-section">
+
+            <div class="health-note-card">
+
+                <div class="health-note-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <h3>
+                        Remember
+                    </h3>
+
+                    <p>
+                        BMI is a general screening measurement and does not
+                        account for every aspect of your health. Use your
+                        results as a guide rather than a diagnosis.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 FitTrack. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- DASHBOARD JS -->
+    <script
+        type="module"
+        src="js/dashboard.js"
+    ></script>
+
+</body>
+</html>

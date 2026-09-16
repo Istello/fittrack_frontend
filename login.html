@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Log in to your FitTrack account and track your BMI progress."
+    >
+
+    <title>Log In — FitTrack</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                Fit<span>Track</span>
+            </a>
+
+            <a href="index.html" class="back-home">
+                ← Back to home
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- ================= LOGIN ================= -->
+    <main class="auth-main">
+
+        <div class="auth-container">
+
+            <div class="auth-header">
+
+                <p class="eyebrow">WELCOME BACK</p>
+
+                <h1>Log in to FitTrack</h1>
+
+                <p>
+                    Access your BMI history and continue tracking your progress.
+                </p>
+
+            </div>
+
+
+            <form class="auth-form" action="#" method="POST">
+
+                <div class="form-group">
+
+                    <label for="usernameOrEmail">
+                        Email or Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="usernameOrEmail"
+                        name="usernameOrEmail"
+                        placeholder="you@example.com or username"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <a href="#" class="forgot-password">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary btn-full"
+                >
+                    Log In
+                </button>
+
+            </form>
+
+
+            <div class="auth-divider">
+                <span>OR</span>
+            </div>
+
+
+            <p class="auth-switch">
+                Don't have a FitTrack account?
+                <a href="signup.html">Create an account</a>
+            </p>
+
+
+            <p class="auth-note">
+                Your account helps keep your BMI history connected to you.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="auth-footer">
+
+        <p>
+            © 2026 FitTrack. All rights reserved.
+        </p>
+
+        <p>
+            BMI is a general health indicator and is not a medical diagnosis.
+        </p>
+
+    </footer>
+    <script type="module" src="./js/login.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
